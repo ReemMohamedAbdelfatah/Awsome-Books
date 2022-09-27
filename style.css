@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: capitalize;
+  text-decoration: underline;
+  color: #000;
+  position: relative;
+  left: 15%;
+  padding-top: 3rem;
+}
+
+.list-of-books {
+  list-style-type: none;
+  position: relative;
+  left: 15%;
+  padding-top: 2rem;
+}
+
+button {
+  padding: 3px 3px;
+  position: relative;
+  left: 15%;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 10%;
+  position: relative;
+  left: 15%;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 3px 2px;
+}
