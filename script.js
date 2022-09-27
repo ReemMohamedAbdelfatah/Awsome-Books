@@ -54,7 +54,6 @@ const addBooks = () => {
     } else {
       errorMsg.innerHTML = 'input title and author';
     }
-
   });
 };
 renderBooks();
