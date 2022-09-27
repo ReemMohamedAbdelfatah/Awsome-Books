@@ -1,33 +1,55 @@
-/*class Book {
-constructor(author,title) {
-  this.author = author;
-  this.title = title;
-}
-addBook = (book) => {
-bookList.push(book);
-};
+const section=document.getElementById('section');
 
-}*/
+const addButton = document.getElementById('add');
 
-const AddButton = document.querySelector('#addBtn');
-const bookTitle = document.querySelector('#title').value;
-const bookAuthor = document.querySelector('#author').value;
-const book = {author: bookAuthor, title: bookTitle};
-const bookList = [];
-console.log(bookList);
-console.log('Helllllllllo');
-const addBook = (e) => {
-  if(bookTitle != "" && bookAuthor != "") {
-    e.preventDefault();
-  alert('hi');
-  console.log(bookTitle);
-  bookList.push(book);
-  console.log(bookList);
-}
-else{
-  console.log("Value is empty");
-}
+const inputTitle= document.getElementById('title');
+
+const inputAuthor= document.getElementById('author');
+const errorMsg = document.getElementsByClassName('errormsg')
+const form = document.querySelector('form')
+
+const box= JSON.parse(localStorage.getItem('box')) || [];
+
+
+// d above adds to the ls
+
+//dreate a functin to remove books n add to ls
+const renderBooks = () => {
+  let content ='';
+  box.forEach((element, index) => {
+    content +=`<div index=${index}>
+    <ul class="list-of-books">
+      <li>${element.titleMsg}</li>
+      <li>${element.autorMsg}</li>
+    </ul>
+    <button class="romebtn" type="button" id=${index}>Remove</button>
+    <hr>
+  </div>`;
+  });
+  section.innerHTML=content
+
 
 }
-
-AddButton.addEventListener('click', addBook);
+const addBooks = () => {
+  addButton.addEventListener('click',() => {
+    const titleMsg= inputTitle.value;
+    const autorMsg= inputAuthor.value;
+      if (titleMsg && autorMsg){    
+    const book={
+      titleMsg,
+      autorMsg,
+    }
+    box.push(book);
+    localStorage.setItem('box', JSON.stringify(box));
+    renderBooks()
+    form.reset()
+  } else {
+    errorMsg.innerHTML = 'input title and author'
+  }
+    
+    // for aray to b saved in LS
+    
+  })
+}
+renderBooks()
+ addBooks();
