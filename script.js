@@ -1,23 +1,24 @@
-const section=document.getElementById('section');
+const section = document.getElementById('section');
 
 const addButton = document.getElementById('add');
 
-const inputTitle= document.getElementById('title');
+const inputTitle = document.getElementById('title');
 
-const inputAuthor= document.getElementById('author');
-const errorMsg = document.getElementsByClassName('errormsg')
-const form = document.querySelector('form')
+const inputAuthor = document.getElementById('author');
 
-const box= JSON.parse(localStorage.getItem('box')) || [];
+const errorMsg = document.getElementsByClassName('errormsg');
 
+const form = document.querySelector('form');
 
-// d above adds to the ls
+const box = JSON.parse(localStorage.getItem('box')) || [];
 
-//dreate a functin to remove books n add to ls
+// code above adds to the ls
+
+// create a functin to remove books n add to ls
 const renderBooks = () => {
-  let content ='';
+  let content = '';
   box.forEach((element, index) => {
-    content +=`<div index=${index}>
+    content += `<div index=${index}>
     <ul class="list-of-books">
       <li>${element.titleMsg}</li>
       <li>${element.autorMsg}</li>
@@ -26,41 +27,39 @@ const renderBooks = () => {
     <hr>
   </div>`;
   });
-  section.innerHTML=content
-  //in the function fr easy identificatn
-const  removeBooks =  () => {
-  const removebtn = [...document.getElementsByClassName('romebtn')]
-  removebtn.forEach((item) =>{
-    item.addEventListener('click', (elem) => {
-        box.splice(elem.target.id, 1)
-        localStorage.setItem('box', JSON.stringify(box))
-        renderBooks()
-    })
-  })
-}
-  removeBooks()
- 
-}
+  section.innerHTML = content;
+  // in the function fr easy identificatn
+  const removeBooks = () => {
+    const removebtn = [...document.getElementsByClassName('romebtn')];
+    removebtn.forEach((item) => {
+      item.addEventListener('click', (elem) => {
+        box.splice(elem.target.id, 1);
+        localStorage.setItem('box', JSON.stringify(box));
+        renderBooks();
+      });
+    });
+  };
+  removeBooks();
+};
 const addBooks = () => {
-  addButton.addEventListener('click',() => {
-    const titleMsg= inputTitle.value;
-    const autorMsg= inputAuthor.value;
-      if (titleMsg && autorMsg){    
-    const book={
-      titleMsg,
-      autorMsg,
+  addButton.addEventListener('click', () => {
+    const titleMsg = inputTitle.value;
+    const autorMsg = inputAuthor.value;
+    if (titleMsg && autorMsg) {
+      const book = {
+        titleMsg,
+        autorMsg,
+      };
+      box.push(book);
+      localStorage.setItem('box', JSON.stringify(box));
+      renderBooks();
+      form.reset();
+    } else {
+      errorMsg.innerHTML = 'input title and author';
     }
-    box.push(book);
-    localStorage.setItem('box', JSON.stringify(box));
-    renderBooks()
-    form.reset()
-  } else {
-    errorMsg.innerHTML = 'input title and author'
-  }
-    
+
     // for aray to b saved in LS
-    
-  })
-}
-renderBooks()
- addBooks();
+  });
+};
+renderBooks();
+addBooks();
