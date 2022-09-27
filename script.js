@@ -27,19 +27,7 @@ const renderBooks = () => {
   </div>`;
   });
   section.innerHTML=content
-  //in the function fr easy identificatn
-  const  removeBooks =  () => {
-    const removebtn = [...document.getElementsByClassName('romebtn')]
-    removebtn.forEach((item) =>{
-      item.addEventListener('click', (elem) => {
-          box.splice(elem.target.id, 1)
-          localStorage.setItem('box', JSON.stringify(box))
-          renderBooks()
-      })
-    })
-  }
-    removeBooks()
-
+ 
 }
 const addBooks = () => {
   addButton.addEventListener('click',() => {
