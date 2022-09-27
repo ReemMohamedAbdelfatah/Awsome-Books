@@ -12,9 +12,6 @@ const form = document.querySelector('form');
 
 const box = JSON.parse(localStorage.getItem('box')) || [];
 
-// code above adds to the ls
-
-// create a functin to remove books n add to ls
 const renderBooks = () => {
   let content = '';
   box.forEach((element, index) => {
@@ -28,7 +25,7 @@ const renderBooks = () => {
   </div>`;
   });
   section.innerHTML = content;
-  // in the function fr easy identificatn
+
   const removeBooks = () => {
     const removebtn = [...document.getElementsByClassName('romebtn')];
     removebtn.forEach((item) => {
@@ -58,7 +55,6 @@ const addBooks = () => {
       errorMsg.innerHTML = 'input title and author';
     }
 
-    // for aray to b saved in LS
   });
 };
 renderBooks();
