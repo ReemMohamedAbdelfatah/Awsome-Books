@@ -48,12 +48,11 @@ class UI {
   static addBookToList(book) {
     const listSection = document.querySelector('#section');
     const item = document.createElement('ul');
-    item.style = 'list-style-type:none; display:flex; gap: 20px;';
+    item.classList.add('ulList');
     item.innerHTML = `
-<li>${book.title}</li>
-<li>${book.author}</li>
+<li>${book.title} <strong>by</strong> ${book.author}</li>
 <li style='display:none;'>${book.id}</li>
-<li><a href="#" class="delete">X</a></li>
+<li><button href="#" class="effacer delete">Remove</button></li>
 `;
     listSection.appendChild(item);
   }
@@ -78,7 +77,7 @@ submitBtn.addEventListener('click', () => {
   const author = document.querySelector('#author').value;
   const id = Math.random();
   if (title === '' || author === '') {
-    showmessage.innerHTML = '<h3 style=\'color:red;\' class=\'alert\'>Please fill in all values</h3>';
+    showmessage.innerHTML = `<h3 style='color:red;' class='alert'>Please fill in all values</h3>`;
     setTimeout(() => {
       document.querySelector('.alert').remove();
     }, 3000);
