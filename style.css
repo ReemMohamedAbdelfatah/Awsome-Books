@@ -2,41 +2,81 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 32px;
-  text-transform: capitalize;
-  text-decoration: underline;
-  color: #000;
-  position: relative;
-  left: 15%;
-  padding-top: 3rem;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  margin: 20px;
 }
 
-.list-of-books {
+.ulList {
   list-style-type: none;
-  position: relative;
-  left: 15%;
-  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  margin: 3px;
+}
+
+#section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#section ul:nth-child(odd) {
+  background: #ccc;
+}
+
+.effacer {
+  height: 35px;
+  margin: 0;
 }
 
 button {
-  padding: 3px 3px;
-  position: relative;
-  left: 15%;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: medium;
+  float: right;
+  border: solid 2px black;
+  box-shadow: 3px 3px 0 0;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 0 0;
+}
+
+form h1 {
+  text-align: center;
 }
 
 form {
+  width: 35%;
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
-  width: 10%;
-  position: relative;
+  justify-content: flex-end;
   left: 15%;
+}
+
+#add {
+  width: 10%;
+  align-self: flex-end;
+}
+
+.seprator {
+  width: 10%;
+  border-top: 1px solid #000;
 }
 
 input {
