@@ -47,6 +47,7 @@ class UI {
 
   static addBookToList(book) {
     const listSection = document.querySelector('#section');
+    listSection.style.border = '2px solid black';
     const item = document.createElement('ul');
     item.classList.add('ulList');
     item.innerHTML = `
@@ -77,7 +78,7 @@ submitBtn.addEventListener('click', () => {
   const author = document.querySelector('#author').value;
   const id = Math.random();
   if (title === '' || author === '') {
-    showmessage.innerHTML = `<h3 style='color:red;' class='alert'>Please fill in all values</h3>`;
+    showmessage.innerHTML = '<h3 style=\'color:red;\' class=\'alert\'>Please fill in all values</h3>';
     setTimeout(() => {
       document.querySelector('.alert').remove();
     }, 3000);

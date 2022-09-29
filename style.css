@@ -16,10 +16,9 @@ body {
 }
 
 .ulList {
-  list-style-type: none; 
-  display: flex; 
+  list-style-type: none;
+  display: flex;
   justify-content: space-between;
-
 }
 
 li {
@@ -28,10 +27,13 @@ li {
 
 #section {
   width: 50%;
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 #section ul:nth-child(odd) {
@@ -57,10 +59,6 @@ button:hover {
 
 form h1 {
   text-align: center;
-}
-
-ul {
-  list-style-type: none;
 }
 
 form {
