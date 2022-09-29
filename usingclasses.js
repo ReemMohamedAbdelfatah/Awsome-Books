@@ -2,9 +2,10 @@
 const submitBtn = document.querySelector('#add');
 const showmessage = document.querySelector('.errormsg');
 class Book {
-  constructor(title, author) {
+  constructor(title, author, id) {
     this.title = title;
     this.author = author;
+    this.id = id;
   }
 }
 
@@ -26,10 +27,10 @@ class store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(author) {
+  static removeBook(id) {
     const books = store.getBooks();
     books.forEach((book, index) => {
-      if (book.author === author.toString()) {
+      if (book.id.toString() === id) {
         books.splice(index, 1);
       }
     });
@@ -51,6 +52,7 @@ class UI {
     item.innerHTML = `
 <li>${book.title}</li>
 <li>${book.author}</li>
+<li style='display:none;'>${book.id}</li>
 <li><a href="#" class="delete">X</a></li>
 `;
     listSection.appendChild(item);
@@ -74,6 +76,7 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 submitBtn.addEventListener('click', () => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
+  const id = Math.random();
   if (title === '' || author === '') {
     showmessage.innerHTML = '<h3 style=\'color:red;\' class=\'alert\'>Please fill in all values</h3>';
     setTimeout(() => {
@@ -81,7 +84,7 @@ submitBtn.addEventListener('click', () => {
     }, 3000);
   } else {
   // Instatiate book because book class is not static
-    const book = new Book(title, author);
+    const book = new Book(title, author, id);
     UI.addBookToList(book);
     store.addBook(book);
     UI.clearFields();
