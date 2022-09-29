@@ -8,21 +8,52 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: 20px;
+  gap: 30px;
   margin: 20px;
+  height: 100vh;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid #000;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+li {
+  margin: 3px;
+}
+
+.nav-list li {
+  border-right: 5px solid #000;
+  padding-right: 10px;
+}
+
+.nav-list li a {
+  text-decoration: none;
 }
 
 .ulList {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-}
-
-li {
-  margin: 3px;
 }
 
 #section {
@@ -82,4 +113,11 @@ form {
 input {
   margin-bottom: 1rem;
   padding: 3px 2px;
+}
+
+footer {
+  width: 100%;
+  align-self: flex-start;
+  border: 3px solid #000;
+  padding: 5px;
 }
