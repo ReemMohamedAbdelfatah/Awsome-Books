@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# # Awsome-Books
+# # Awsome-Books-ES6
 Building Book Search application using Low Fidelity Wireframes.
 
 
@@ -10,7 +10,7 @@ Major languages: HTML-CSS-JS
 Frameworks: NodeJS
 Technologies used: VSCode, GitHub, Linter
 
-[Live Demo Link](https://reemmohamedabdelfatah.github.io/Portfolio-Reem/)
+[Live Demo Link](https://reemmohamedabdelfatah.github.io/Awsome-Books/)
 
 ## Getting Started
 To get a local copy, follow these simple steps.
