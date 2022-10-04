@@ -1,4 +1,4 @@
-import store from './store.js'
+import store from './store.js';
 // Add Elements to UI
 export default class UI {
   static displayBooks() {

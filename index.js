@@ -2,7 +2,8 @@ import Book from './modules/Book.js';
 import UI from './modules/UI.js';
 import store from './modules/store.js';
 import setTime from './modules/date.js';
-/* eslint-disable max-classes-per-file */
+/* eslint-disable no-unused-vars */
+setTime();
 const submitBtn = document.querySelector('#add');
 const showmessage = document.querySelector('.errormsg');
 // Event: Display books
