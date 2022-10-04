@@ -1,12 +1,12 @@
 import store from './store.js';
 // Add Elements to UI
 export default class UI {
-  static displayBooks() {
+  static displayBooks = () => {
     const books = store.getBooks();
     books.forEach((book) => UI.addBookToList(book));
   }
 
-  static addBookToList(book) {
+  static addBookToList = (book) => {
     const listSection = document.querySelector('#section');
     listSection.style.border = '2px solid black';
     const item = document.createElement('ul');
@@ -19,13 +19,13 @@ export default class UI {
     listSection.appendChild(item);
   }
 
-  static deleteBook(el) {
+  static deleteBook = (el) => {
     if (el.classList.contains('delete')) {
       el.parentElement.parentElement.remove();
     }
   }
 
-  static clearFields() {
+  static clearFields = () => {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
