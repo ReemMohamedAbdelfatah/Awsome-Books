@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  width: 100%;
+  width: 97%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,7 +52,7 @@ li {
   text-decoration: none;
 }
 
-.nav-list li a:active {
+.active {
   color: #486b8c;
 }
 
@@ -79,7 +79,7 @@ li {
   width: 70%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -142,13 +142,21 @@ input {
 }
 
 footer {
-  width: 100%;
+  width: 97%;
   font-size: 30px;
   font-weight: 600;
   border: 3px solid #000;
   padding: 5px;
   position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
+
+.dateDisplay {
+  align-self: flex-end;
+  position: fixed;
+  top: 5rem;
+  right: 2rem;
+}
+
